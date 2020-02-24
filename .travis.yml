@@ -1,0 +1,22 @@
+language: php
+php:
+  - '7.2'
+  - '7.3'
+  - '7.4'
+  - nightly
+
+env:
+  - TWIG_VERSION="^2.10"
+  - TWIG_VERSION="^3.0"
+
+jobs:
+  allow_failures:
+    - php: nightly
+
+install:
+  - composer require twig/twig:${TWIG_VERSION}
+  - composer install
+  - composer info
+
+script:
+  - ./vendor/bin/phpunit --configuration ./phpunit.xml.dist
