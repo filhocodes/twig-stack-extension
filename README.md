@@ -1,6 +1,7 @@
 # Twig Stack Extension
 
 [![Build Status](https://travis-ci.org/filhocodes/twig-stack-extension.svg?branch=master)](https://travis-ci.org/filhocodes/twig-stack-extension)
+[![Coverage Status](https://coveralls.io/repos/github/filhocodes/twig-stack-extension/badge.svg)](https://coveralls.io/github/filhocodes/twig-stack-extension)
 
 This extension allows you to define a section of a "base template" that will
 receive contents from all the other pages, either via `include`, `embed` or
