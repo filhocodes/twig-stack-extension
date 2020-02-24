@@ -1,0 +1,7 @@
+{% prepend my_stack component_script %}
+  <script>MyScript = () => {}</script>
+{% endprepend %}
+
+{% push my_stack %}
+  <script>MyScript("{{ value }}")</script>
+{% endpush %}

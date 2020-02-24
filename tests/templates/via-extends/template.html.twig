@@ -1,0 +1,8 @@
+{% extends 'via-extends/base.html.twig' %}
+
+{% block my_block %}
+  {% push my_stack %} 5 {% endpush %}
+  {% prepend my_stack %} 4 {% endprepend %}
+  {% push my_stack %} 6 {% endpush %}
+{% endblock %}
+

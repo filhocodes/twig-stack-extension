@@ -1,0 +1,7 @@
+{% if type == 'push' %}
+  {% push my_stack %} {{ value }} {% endpush %}
+{% endif %}
+
+{% if type == 'prepend' %}
+  {% prepend my_stack %} {{ value }} {% endprepend %}
+{% endif %}

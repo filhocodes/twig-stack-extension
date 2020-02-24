@@ -1,0 +1,31 @@
+{
+    "name": "filhocodes/twig-stack-extension",
+    "description": "Implement content stacks into Twig templates.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marcos SF Filho",
+            "email": "marcos@filho.codes"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "FilhoCodes\\TwigStackExtension\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FilhoCodes\\TwigStackExtensionTests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^7.2.5",
+        "twig/twig": "^2.10|^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
