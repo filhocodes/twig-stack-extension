@@ -45,7 +45,7 @@ final class TwigStackExtensionTest extends TestCase
     public function testPushPrependViaInclude(): void
     {
         $result = trim($this->twig->render('via-include/template.html.twig'));
-        $this->assertRegExp('/^1\s+2\s+3$/', $result);
+        $this->assertMatchesRegularExpression('/^1\s+2\s+3$/', $result);
     }
 
     /**
@@ -58,7 +58,7 @@ final class TwigStackExtensionTest extends TestCase
     public function testPushPrependViaExtends(): void
     {
         $result = trim($this->twig->render('via-extends/template.html.twig'));
-        $this->assertRegExp('/^4\s+5\s+6$/', $result);
+        $this->assertMatchesRegularExpression('/^4\s+5\s+6$/', $result);
     }
 
     /**
@@ -71,7 +71,7 @@ final class TwigStackExtensionTest extends TestCase
     public function testPushPrependViaEmbed(): void
     {
         $result = trim($this->twig->render('via-embed/template.html.twig'));
-        $this->assertRegExp('/^7\s+8\s+9$/', $result);
+        $this->assertMatchesRegularExpression('/^7\s+8\s+9$/', $result);
     }
 
     /**

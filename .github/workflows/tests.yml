@@ -1,0 +1,59 @@
+name: filhocodes/twig-stack-extension tests
+
+on:
+  push:
+    branches:
+      - master
+      - feature/*
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    name: PHPUnit TestSuite
+    runs-on: ubuntu-20.04
+    continue-on-error: ${{ matrix.php == 'nightly' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        php:
+          - '7.4'
+          - '8.0'
+          - '8.1'
+          - 'nightly'
+        twig:
+          - '^2.10'
+          - '^3.0'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          tools: composer:v2
+          coverage: ${{ matrix.php == '7.4' && 'xdebug2' || 'xdebug' }}
+        env:
+          fail-fast: true
+      - name: Install desired Twig version
+        uses: nick-invision/retry@v1
+        with:
+          timeout_minutes: 5
+          max_attempts: ${{ matrix.php == 'nightly' && '1' || '5' }}
+          command: composer require twig/twig:${{ matrix.twig }} --no-interaction --no-progress
+      - name: Install other dependencies
+        uses: nick-invision/retry@v1
+        with:
+          timeout_minutes: 5
+          max_attempts: ${{ matrix.php == 'nightly' && '1' || '5' }}
+          command: composer install --prefer-dist --no-interaction --no-progress
+      - name: List dependencies
+        run: composer info
+      - name: Execute tests
+        run: ./vendor/bin/phpunit --configuration ./phpunit.xml.dist --verbose
+      - name: Upload coverage results to Coveralls
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: php vendor/bin/php-coveralls -v
+        if: ${{ success() }}
