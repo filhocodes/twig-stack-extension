@@ -1,6 +1,8 @@
 # Twig Stack Extension
 
-[![Build Status](https://travis-ci.org/filhocodes/twig-stack-extension.svg?branch=master)](https://travis-ci.org/filhocodes/twig-stack-extension)
+[![Composer Package](https://img.shields.io/packagist/v/filhocodes/twig-stack-extension)](https://packagist.org/packages/filhocodes/twig-stack-extension)
+[![Composer Package Downloads](https://img.shields.io/packagist/dt/filhocodes/twig-stack-extension)](https://packagist.org/packages/filhocodes/twig-stack-extension)
+[![Build Status](https://github.com/filhocodes/twig-stack-extension/actions/workflows/tests.yml/badge.svg)](https://github.com/filhocodes/twig-stack-extension/actions)
 [![Coverage Status](https://coveralls.io/repos/github/filhocodes/twig-stack-extension/badge.svg)](https://coveralls.io/github/filhocodes/twig-stack-extension)
 
 This extension allows you to define a section of a "base template" that will
@@ -15,6 +17,12 @@ since it is my first Twig Extension.
 
 This project is also HEAVILY related to the package `aygon/twig-stack`. It's
 kinda like a refactor of their code into Twig 2.*, with my opinionated choices.
+
+## CHANGELOG v2.0.0
+
+Version 2.0.0 enables support for both PHP 8.0 and PHP 8.1, while removing
+support for PHP 7.3 and bellow. If you are still using those old PHP versions,
+you will need to install the version 1.0.0 of this package.
 
 ## Installation
 
