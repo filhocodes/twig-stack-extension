@@ -17,7 +17,7 @@ final class StackTokenParser extends AbstractTokenParser
     /**
      * @inheritDoc
      */
-    public function parse(Token $token)
+    public function parse(Token $token): StackNode
     {
         $stream = $this->parser->getStream();
 
@@ -30,7 +30,7 @@ final class StackTokenParser extends AbstractTokenParser
     /**
      * @inheritDoc
      */
-    public function getTag()
+    public function getTag(): string
     {
         return 'stack';
     }

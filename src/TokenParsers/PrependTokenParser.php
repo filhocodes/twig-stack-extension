@@ -20,7 +20,7 @@ final class PrependTokenParser extends AbstractTokenParser
     /**
      * @inheritDoc
      */
-    public function parse(Token $token)
+    public function parse(Token $token): PrependNode
     {
         $lineno = $token->getLine();
         $stream = $this->parser->getStream();
@@ -57,7 +57,7 @@ final class PrependTokenParser extends AbstractTokenParser
     /**
      * @inheritDoc
      */
-    public function getTag()
+    public function getTag(): string
     {
         return 'prepend';
     }
