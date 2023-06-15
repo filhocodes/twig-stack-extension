@@ -38,7 +38,7 @@ final class PrependNode extends Node
      *
      * @param Compiler $compiler
      */
-    public function compile(Compiler $compiler)
+    public function compile(Compiler $compiler): void
     {
         $extension = TwigStackExtension::class;
         $stackName = $this->getAttribute('name');

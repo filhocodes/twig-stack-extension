@@ -45,7 +45,7 @@ final class StackNodeVisitor implements NodeVisitorInterface
     /**
      * @inheritDoc
      */
-    public function getPriority()
+    public function getPriority(): int
     {
         return -10;
     }

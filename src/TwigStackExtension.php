@@ -54,7 +54,7 @@ final class TwigStackExtension implements ExtensionInterface
     /**
      * @inheritDoc
      */
-    public function getTokenParsers()
+    public function getTokenParsers(): array
     {
         return [
             new StackTokenParser(),
@@ -66,7 +66,7 @@ final class TwigStackExtension implements ExtensionInterface
     /**
      * @inheritDoc
      */
-    public function getNodeVisitors()
+    public function getNodeVisitors(): array
     {
         return [
             new StackNodeVisitor(),
@@ -76,7 +76,7 @@ final class TwigStackExtension implements ExtensionInterface
     /**
      * @inheritDoc
      */
-    public function getFilters()
+    public function getFilters(): array
     {
         return [];
     }
@@ -84,7 +84,7 @@ final class TwigStackExtension implements ExtensionInterface
     /**
      * @inheritDoc
      */
-    public function getTests()
+    public function getTests(): array
     {
         return [];
     }
@@ -92,7 +92,7 @@ final class TwigStackExtension implements ExtensionInterface
     /**
      * @inheritDoc
      */
-    public function getFunctions()
+    public function getFunctions(): array
     {
         return [];
     }
@@ -100,7 +100,7 @@ final class TwigStackExtension implements ExtensionInterface
     /**
      * @inheritDoc
      */
-    public function getOperators()
+    public function getOperators(): array
     {
         return [];
     }

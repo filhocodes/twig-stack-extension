@@ -32,7 +32,7 @@ final class StackNode extends Node
      *
      * @param Compiler $compiler
      */
-    public function compile(Compiler $compiler)
+    public function compile(Compiler $compiler): void
     {
         /** @var $extension TwigStackExtension */
         $extension = $compiler->getEnvironment()->getExtension(TwigStackExtension::class);

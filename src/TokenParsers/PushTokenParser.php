@@ -20,7 +20,7 @@ final class PushTokenParser extends AbstractTokenParser
     /**
      * @inheritDoc
      */
-    public function parse(Token $token)
+    public function parse(Token $token): PushNode
     {
         $lineno = $token->getLine();
         $stream = $this->parser->getStream();
@@ -57,7 +57,7 @@ final class PushTokenParser extends AbstractTokenParser
     /**
      * @inheritDoc
      */
-    public function getTag()
+    public function getTag(): string
     {
         return 'push';
     }
